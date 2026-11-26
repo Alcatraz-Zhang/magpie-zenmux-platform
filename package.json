@@ -1,0 +1,28 @@
+{
+  "name": "magpie-zenmux-platform",
+  "version": "0.1.0",
+  "description": "ZenMux Builder Plan and PAYG for Magpie, with per-plan models, quota monitoring and native model APIs.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./server": "./index.mjs"
+  },
+  "files": ["index.mjs", "src"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcatraz-Zhang/magpie-zenmux-platform.git"
+  },
+  "keywords": ["magpie", "magpie-plugin", "provider", "zenmux"],
+  "magpie": {
+    "name": "ZenMux Builder & PAYG",
+    "summary": {
+      "en": "ZenMux Builder and PAYG, with plan-filtered models, 5-hour and 7-day quotas, early resets and native model APIs.",
+      "zh": "接入 ZenMux Builder 与 PAYG，按套餐筛选模型，查看 5 小时和 7 天额度及提前重置次数，支持原生模型协议。"
+    }
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
