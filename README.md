@@ -49,3 +49,5 @@ Enter `github:Alcatraz-Zhang/magpie-zenmux-platform` in Magpie → Plugins → D
 [Magpie plugin documentation](https://usemagpie.ai/docs/plugins) · [ZenMux Platform API](https://zenmux.ai/docs/api/platform/subscription-detail.html) · [ZenMux Extra Usage](https://zenmux.ai/docs/guide/subscription.html#extra-usage-automatic-overage-switching)
 
 The plugin uses Magpie's documented provider hooks. [NieiR/magpie-zenmux](https://github.com/NieiR/magpie-zenmux) and [DylanLIiii/magpie-zenmux](https://github.com/DylanLIiii/magpie-zenmux) were used as references for ZenMux behavior.
+
+The ZenMux icon comes from DylanLIiii’s plugin. Its MIT notice is included in [assets/LICENSE](assets/LICENSE). [Original SVG](https://github.com/DylanLIiii/magpie-zenmux/blob/3c3f017/logo.svg)
