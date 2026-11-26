@@ -39,21 +39,20 @@ function network(t, routes) {
   return calls
 }
 
-test("Magpie sign-in uses password fields with prefix hints and accepts opaque key formats", async () => {
+test("Magpie uses its native API Key form after the optional Platform Key prompt", async () => {
   for (const [entry, id, hint] of [[ZenMuxBuilder, "zenmux-builder", "sk-subs-"], [ZenMuxPayg, "zenmux-payg", "sk-payg-"]]) {
-    assert.equal(typeof entry, "function", "Magpie must find the provider entry")
     const { auth } = await entry()
     assert.equal(auth.provider, id)
     const [method] = auth.methods
     assert.equal(method.type, "api")
-    assert.deepEqual(method.prompts.map(p => p.type), ["password", "password"])
-    assert.deepEqual(method.prompts.map(p => p.placeholder), [hint + "…", "sk-mgmt-…"])
-    for (const prompt of method.prompts) assert.equal(prompt.validate, undefined)
-    assert.deepEqual(await method.authorize({ inferenceKey: "  opaque-inference  ", platformKey: "opaque-platform" }),
-      { type: "success", key: "opaque-inference", metadata: { platformKey: "opaque-platform" } })
-    assert.deepEqual(await method.authorize({ inferenceKey: "older-format", platformKey: "" }),
-      { type: "success", key: "older-format" })
-    assert.equal((await method.authorize({ inferenceKey: " " })).type, "failed")
+    assert.equal(method.authorize, undefined, "Magpie must submit from its native API Key form")
+    assert.equal(method.placeholder, hint + "…")
+    const [platform] = method.prompts
+    assert.equal(method.prompts.length, 1)
+    assert.equal(platform.key, "platformKey")
+    assert.equal(platform.type, "password")
+    assert.equal(platform.placeholder, "sk-mgmt-…")
+    assert.equal(platform.validate, undefined)
   }
 })
 

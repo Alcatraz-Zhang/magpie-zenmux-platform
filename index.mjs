@@ -34,14 +34,8 @@ function signIn(account) {
     type: "api",
     label: account.label,
     labels: { zh: account.labelZh },
+    placeholder: account.hint,
     prompts: [
-      {
-        type: "password",
-        key: "inferenceKey",
-        message: account.label,
-        messages: { zh: account.labelZh },
-        placeholder: account.hint,
-      },
       {
         type: "password",
         key: "platformKey",
@@ -50,12 +44,6 @@ function signIn(account) {
         placeholder: "sk-mgmt-…",
       },
     ],
-    async authorize(inputs = {}) {
-      const key = keyText(inputs.inferenceKey)
-      if (!key) return { type: "failed", error: "Enter a ZenMux inference key." }
-      const platformKey = keyText(inputs.platformKey)
-      return { type: "success", key, ...(platformKey && { metadata: { platformKey } }) }
-    },
   }
 }
 

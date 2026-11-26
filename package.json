@@ -1,6 +1,6 @@
 {
   "name": "magpie-zenmux-platform",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ZenMux Builder Plan and PAYG for Magpie, with per-plan models, quota monitoring and native model APIs.",
   "type": "module",
   "main": "./index.mjs",
