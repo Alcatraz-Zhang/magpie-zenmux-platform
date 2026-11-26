@@ -4,19 +4,19 @@
 
 ## 安装
 
-解压本地安装包。在 Magpie 的 **插件 → 发现** 点安装框旁的文件夹按钮，选择解压后含有 `package.json` 的目录。建议使用 Magpie 0.1.4839 或更新版本。
-
-GitHub 仓库发布后，也可以在安装框输入：
+建议使用 Magpie 0.1.4839 或更新版本。在 Magpie 的 **插件 → 发现** 安装框输入以下地址。
 
 ```text
 github:Alcatraz-Zhang/magpie-zenmux-platform
 ```
 
-也可以在命令行执行：
+也可以用命令行安装。
 
 ```sh
 magpie plugin add github:Alcatraz-Zhang/magpie-zenmux-platform
 ```
+
+如果使用本地源码，在同一个安装框旁点文件夹按钮，选择含有 `package.json` 的目录。
 
 ## 登录
 
@@ -42,7 +42,7 @@ Builder 的模型列表取 ZenMux 推理目录和实际套餐的交集，包括�
 
 ## English
 
-Unzip the package and select its folder in Magpie → Plugins → Discover. Sign in to **ZenMux Builder Plan** with a subscription key or **ZenMux PAYG** with a pay-as-you-go key. Add an optional Platform Key for quota, resets, account status or balance. Builder uses the intersection of paid plans when the key is omitted. Match the Builder provider’s Extra Usage toggle to the ZenMux console. Turn it on for ZenMux-managed overage using the original subscription key. Turn it off to let a Magpie routing group use Builder quota and fall back to PAYG.
+Enter `github:Alcatraz-Zhang/magpie-zenmux-platform` in Magpie → Plugins → Discover. Sign in to **ZenMux Builder Plan** with a subscription key or **ZenMux PAYG** with a pay-as-you-go key. Add an optional Platform Key for quota, resets, account status or balance. Builder uses the intersection of paid plans when the key is omitted. Match the Builder provider’s Extra Usage toggle to the ZenMux console. Turn it on for ZenMux-managed overage using the original subscription key. Turn it off to let a Magpie routing group use Builder quota and fall back to PAYG.
 
 [Magpie plugin documentation](https://usemagpie.ai/docs/plugins) · [ZenMux Platform API](https://zenmux.ai/docs/api/platform/subscription-detail.html) · [ZenMux Extra Usage](https://zenmux.ai/docs/guide/subscription.html#extra-usage-automatic-overage-switching)
 
